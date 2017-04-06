@@ -1,9 +1,5 @@
-INSERT INTO user (id, username, password, firstname, lastname) VALUES (1, 'user', '123', 'Fan', 'Jin');
-INSERT INTO user (id, username, password, firstname, lastname) VALUES (2, 'admin', '123', 'Jing', 'Xiao');
+INSERT INTO `user` VALUES (1,'Rik','de Kruiff','123','rik'),(2,'Nino','Zijderveld','123','nino');
 
-INSERT INTO authority (id, name) VALUES (1, 'ROLE_USER');
-INSERT INTO authority (id, name) VALUES (2, 'ROLE_ADMIN');
+INSERT INTO `authority` VALUES (2,'ROLE_ADMIN'),(3,'ROLE_ONDERZOEKER'),(4,'ROLE_BEHEERDER'),(5,'ROLE_FYSIO'),(6,'ROLE_BEHEERDERBC');
 
-INSERT INTO user_authority (user_id, authority_id) VALUES (1, 1);
-INSERT INTO user_authority (user_id, authority_id) VALUES (2, 1);
-INSERT INTO user_authority (user_id, authority_id) VALUES (2, 2);
+INSERT INTO `user_authority` VALUES (1,5),(1,4),(2,3),(2,6);

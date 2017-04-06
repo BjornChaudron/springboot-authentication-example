@@ -35,6 +35,7 @@ public class UserController {
     }
 
     @RequestMapping( method = GET, value= "/user/all")
+    @PreAuthorize("hasRole('ONDERZOEKER')")
     public List<User> loadAll() {
         return this.userService.findAll();
     }
@@ -46,7 +47,7 @@ public class UserController {
      *  to access this endpoint.
      */
     @RequestMapping("/whoami")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('FYSIO') or hasRole('ONDERZOEKER')")
     public User user() {
         return (User)SecurityContextHolder
                 .getContext()
